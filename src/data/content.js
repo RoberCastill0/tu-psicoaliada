@@ -55,7 +55,6 @@ export const profile = {
     { icon: Brain, text: 'Especialización en Modificación de Conducta en niños con TEA y TDAH.' },
     { icon: BrainCircuit, text: 'Diplomado en Abordaje Cognitivo Conductual en niños y adolescentes.' },
     { icon: MessagesSquare, text: 'Diplomado en Terapia de Lenguaje.' },
-    { icon: Waypoints, text: 'Formación en Neuro-rehabilitación y Estimulación Sensorial.' },
     { icon: Users, text: 'Experiencia en orientación psicológica, talleres y acompañamiento socioemocional.' },
   ],
 }

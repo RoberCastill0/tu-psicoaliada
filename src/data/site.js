@@ -15,9 +15,9 @@ export const brand = {
 
 export const contact = {
   // WhatsApp: código de país + número, SOLO dígitos (Perú = 51).
-  whatsappNumber: '51934578509',
+  whatsappNumber: '51924792859',
   // Cómo se muestra el número en pantalla.
-  whatsappDisplay: '934 578 509',
+  whatsappDisplay: '924 792 859',
   // Mensaje que aparece escrito al abrir WhatsApp desde los botones generales.
   whatsappDefaultMessage:
     'Hola Fátima, vi tu página Tu PsicoAliada y me gustaría recibir información sobre tus servicios.',
