@@ -1,0 +1,22 @@
+.section-heading {
+  max-width: 720px;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.section-heading--center {
+  margin-inline: auto;
+  text-align: center;
+}
+.section-heading h2 {
+  font-size: clamp(1.9rem, 4.2vw, 2.75rem);
+}
+.section-heading__subtitle {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+.section-heading--light .eyebrow {
+  color: #ff9b8f;
+}
+.section-heading--light .section-heading__subtitle {
+  color: #c3cde0;
+}

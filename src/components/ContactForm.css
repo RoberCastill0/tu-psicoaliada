@@ -1,0 +1,105 @@
+.cf {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+.cf__title {
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
+}
+.cf__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+.cf__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.cf__field--full {
+  grid-column: 1 / -1;
+}
+.cf__field label {
+  font-weight: 700;
+  font-size: 0.93rem;
+  color: var(--color-navy);
+}
+.cf__field label span {
+  color: var(--color-coral-600);
+}
+.cf__field input,
+.cf__field select,
+.cf__field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.95rem;
+  border: 1.5px solid #cfd7e3;
+  border-radius: var(--radius-sm);
+  background: #fbfcfe;
+  color: var(--color-text);
+  font-size: 1rem; /* 16px evita el zoom automático en iPhone */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.cf__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+.cf__field input:focus,
+.cf__field select:focus,
+.cf__field textarea:focus {
+  outline: none;
+  border-color: var(--color-teal-600);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(14, 165, 176, 0.18);
+}
+.cf__field [aria-invalid='true'] {
+  border-color: var(--color-coral-600);
+  background: var(--color-coral-50);
+}
+.cf__error {
+  color: var(--color-coral-700);
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+.cf__note {
+  margin: 0.85rem 0 0;
+  font-size: 0.87rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+.cf__status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.cf__status svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.cf__status--ok {
+  background: #e7f6ee;
+  color: #0e5a31;
+}
+.cf__status--error {
+  background: var(--color-coral-50);
+  color: var(--color-coral-700);
+}
+.cf button[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media (max-width: 560px) {
+  .cf__row {
+    grid-template-columns: 1fr;
+  }
+}

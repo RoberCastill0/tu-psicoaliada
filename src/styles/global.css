@@ -1,0 +1,246 @@
+/* ═══════════════════════════════════════════════════════════════
+   ESTILOS GLOBALES – base, contenedor, botones y utilidades
+   Los estilos de cada sección están junto a su componente
+   (por ejemplo: src/sections/Hero.css).
+   ═══════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--color-navy);
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--color-teal-600);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-coral);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Las secciones dejan espacio para el menú fijo al navegar con anclas */
+section[id] {
+  scroll-margin-top: calc(var(--header-height) - 1px);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  background: var(--color-navy);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ── Contenedor y secciones ── */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.section {
+  padding-block: var(--section-space);
+  position: relative;
+}
+
+.section--tint {
+  background: linear-gradient(180deg, var(--color-teal-50) 0%, #f7fbfc 100%);
+}
+
+.section--dark {
+  background: var(--color-navy);
+  color: #d7deec;
+}
+.section--dark h2,
+.section--dark h3 {
+  color: #fff;
+}
+
+/* ── Etiqueta superior de sección ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-coral-600);
+  margin-bottom: 0.9rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  background: currentColor;
+}
+
+/* ── Botones ── */
+.btn {
+  --btn-bg: var(--color-coral-600);
+  --btn-fg: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(242, 107, 94, 0.3);
+}
+.btn svg {
+  flex-shrink: 0;
+}
+
+.btn--primary:hover {
+  background: var(--color-coral-700);
+}
+
+.btn--whatsapp {
+  --btn-bg: var(--color-whatsapp);
+}
+.btn--whatsapp:hover {
+  background: var(--color-whatsapp-dark);
+  box-shadow: 0 10px 24px rgba(31, 168, 85, 0.3);
+}
+
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-navy);
+  border-color: var(--color-navy);
+}
+.btn--outline:hover {
+  background: var(--color-navy);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn--light {
+  --btn-bg: #fff;
+  --btn-fg: var(--color-navy);
+}
+.btn--light:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.btn--small {
+  min-height: 42px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ── Animación de aparición al hacer scroll ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,46 @@
+/* ═══════════════════════════════════════════════════════════════
+   TEMA VISUAL – COLORES, FUENTES Y MEDIDAS
+   Cambia aquí los colores de marca y se aplicarán en toda la web.
+   Colores tomados del catálogo de Tu PsicoAliada:
+   azul marino, turquesa y coral.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Colores de marca ── */
+  --color-navy: #0b1f4b;        /* Azul marino: títulos, fondos oscuros */
+  --color-navy-700: #14306a;
+  --color-teal: #0ea5b0;        /* Turquesa: acentos, botones secundarios */
+  --color-teal-600: #087e87;    /* Turquesa oscuro (texto sobre blanco, contraste AA) */
+  --color-teal-100: #d9f3f4;
+  --color-teal-50: #eefafa;
+  --color-coral: #f26b5e;       /* Coral: botones principales, detalles */
+  --color-coral-600: #cb4335;   /* Coral oscuro: botones y textos (contraste AA) */
+  --color-coral-700: #b3382b;
+  --color-coral-100: #fde3df;
+  --color-coral-50: #fff4f2;
+
+  /* ── Neutros ── */
+  --color-bg: #fbfcfd;
+  --color-surface: #ffffff;
+  --color-text: #1d2a44;
+  --color-muted: #55627a;
+  --color-border: #e3e8f0;
+  --color-whatsapp: #128040;     /* Verde WhatsApp accesible */
+  --color-whatsapp-dark: #0e6a35;
+
+  /* ── Tipografías (se cargan en src/main.jsx) ── */
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* ── Medidas ── */
+  --container: 1180px;
+  --header-height: 76px;
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 2px 8px rgba(11, 31, 75, 0.06);
+  --shadow: 0 10px 30px rgba(11, 31, 75, 0.08);
+  --shadow-lg: 0 24px 60px rgba(11, 31, 75, 0.14);
+  --section-space: clamp(4rem, 9vw, 7rem);
+}
